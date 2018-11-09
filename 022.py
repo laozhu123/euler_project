@@ -728,50 +728,22 @@ def smallestMultiple():
     print(sum)
 
 
-def fastOrder(list, first, end):
-    x = first
-    y = end - 1
-    preY = -1
-    finish = False
-    while True:
-        while True:
-            if isBig(list[x], list[end]):
-                break
-            else:
-                if x == y:
-                    finish = True
-                    break
-                x += 1
+def fastOrder(array, l, r):
+    if l < r:
+        q = partition(array, l, r)
+        fastOrder(array, l, q - 1)
+        fastOrder(array, q + 1, r)
 
-        if finish:
-            break
+def partition(array, l, r):
+    x = array[r]
+    i = l - 1
+    for j in range(l, r):
+        if isBig(x,array[j]):
+            i += 1
+            array[i], array[j] = array[j], array[i]
+    array[i + 1], array[r] = array[r], array[i + 1]
+    return i + 1
 
-        while True:
-            if x == y:
-                preY = x
-                finish = True
-                break
-            else:
-                if isBig(list[end],list[y]):
-                    preY = y
-                    changeNum(list,x,y)
-                    break
-                else:
-                    y -= 1
-
-        if finish:
-            break
-
-    if preY == -1:
-        if end - 1 > first:
-            fastOrder(list,first,end - 1)
-
-    else:
-        changeNum(list, preY, end)
-        if preY - first > 1:
-            fastOrder(list,first,preY-1)
-        if end - preY > 1:
-            fastOrder(list,preY+1,end)
 
 def changeNum(list,first,second):
     pre = list[first]
