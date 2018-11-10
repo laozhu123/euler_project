@@ -10,6 +10,7 @@ def getCycle(num):
             mother *= 10
         else:
             r, q = divmod(mother, num)
+            mother = q
             if q == 0:
                 return 0
             else:
