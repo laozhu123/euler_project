@@ -8,7 +8,7 @@ def get_counting(x, y):
 
 def compute():
     m = 2000000
-    x,y = 0,0
+    x, y = 0, 0
     for i in range(1, 100):
         for j in range(1, 100):
             t = get_counting(i, j)
@@ -18,7 +18,7 @@ def compute():
                 y = j
             if t > 2000000:
                 break
-    print(m,x,y,x*y)
+    print(m, x, y, x * y)
 
 
 compute()
