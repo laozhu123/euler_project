@@ -431,29 +431,3 @@ def compute():
 
 print(compute())
 
-# def compute():
-#     h = len(GRID)
-#     w = len(GRID[0])
-#     INFINITY = 1 << 30
-#
-#     def get_value(x, y):
-#         if x < 0:
-#             return 0
-#         elif y < 0 or y >= h or x >= w:
-#             return INFINITY
-#         else:
-#             return distance[y][x]
-#
-#     # Dynamic programming
-#     distance = [[0] * w for i in range(h)]
-#     for x in range(w):
-#         for y in range(h):
-#             distance[y][x] = GRID[y][x] + min(get_value(x - 1, y), get_value(x, y - 1))
-#         for y in reversed(range(h)):
-#             distance[y][x] = min(GRID[y][x] + get_value(x, y + 1), distance[y][x])
-#
-#     # Minimum of rightmost column
-#     ans = min(distance[y][-1] for y in range(h))
-#     return str(ans)
-
-# print(compute())
