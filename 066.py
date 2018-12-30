@@ -1,14 +1,18 @@
+
+# tip1:
+#       this is about the Pell's equation
+
 import eulerlib, fractions
 
 
-# Based on this insane theorem: Suppose D > 1 is an integer, non-perfect-square.
-#
+# Based on this insane t                                             heorem: Suppose D > 1 is an integer, non-perfect-square.
+# 
 # Express sqrt(D) as the continued fraction (a0, a1, ..., a_{n-1}, (b0, b1, ..., b_{m-1})),
 # where the sequence of b's is the periodic part.
-#
+# 
 # Let p/q (in lowest terms) = (a0, a1, ..., a_{n-1}, b0, b1, ..., b_{m-2}).
 # (This is a truncation of the continued fraction with only one period minus the last term.)
-#
+# 
 # Then the minimum solution (x, y) for Pell's equation is given by:
 # - (p, q) if m is even
 # - (p^2 + D q^2, 2pq) if m is odd
